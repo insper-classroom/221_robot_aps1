@@ -14,12 +14,16 @@ print("OpenCV versão: ", cv2.__version__)
 print("Diretório de trabalho: ", os.getcwd())
 
 
-def recorta_leopardo(bgr): 
+def realca_caixa_vermelha(bgr): 
     """Não mude ou renomeie esta função
-        deve receber uma imagem com pixels vermelhos e azuis marcando a posição do leopardo
-        e recortar a sub imagem com o leopardo, retornando-a
+        deve receber uma imagem bgr
+        e fazer alguma filtragem / seleção de modo a obter uma imagem
+        de saída grayscale
+        em que somente os pixels da caixa estão brancos e todo o restante está vermelho
+        Dica: Use mais de um canal, por exemplo R e B
     """
     res = bgr.copy()
+    gray = res[:,:,0]
     return res
 
 
@@ -28,7 +32,7 @@ if __name__ == "__main__":
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
     # Faz o processamento
-    saida = recorta_leopardo(img)
+    saida = realca_caixa_vermelha(img)
     cv2.imwrite( "saida_ex2.png", saida)
 
 
