@@ -19,7 +19,7 @@ def realca_caixa_vermelha(bgr):
         deve receber uma imagem bgr
         e fazer alguma filtragem / seleção de modo a obter uma imagem
         de saída grayscale
-        em que somente os pixels da caixa estão brancos e todo o restante está vermelho
+        em que somente os pixels da caixa estão brancos e todo o restante está preto
         Dica: Use mais de um canal, por exemplo R e B
     """
     res = bgr.copy()
@@ -29,8 +29,7 @@ def realca_caixa_vermelha(bgr):
 
 if __name__ == "__main__":
     img = cv2.imread("cena_canto_sala.jpg")
-    gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-
+    
     # Faz o processamento
     saida = realca_caixa_vermelha(img)
     cv2.imwrite( "saida_ex2.png", saida)
@@ -41,5 +40,6 @@ if __name__ == "__main__":
 
     cv2.imshow('saida', saida)
 
-    cv2.waitKey(0)
+    cv2.waitKey()
+    cv2.destroyAllWindows()
 

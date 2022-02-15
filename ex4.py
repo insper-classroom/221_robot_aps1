@@ -46,6 +46,7 @@ if __name__ == "__main__":
     cv2.imshow('antartida', antartida)
     cv2.imshow('canada', canada)
 
-    cv2.waitKey(0)
+    cv2.waitKey()
+    cv2.destroyAllWindows()
 
 

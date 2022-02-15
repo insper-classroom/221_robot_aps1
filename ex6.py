@@ -38,5 +38,6 @@ if __name__ == "__main__":
     cv2.imshow('saida', saida)
     cv2.moveWindow('saida',800,200)
 
-    cv2.waitKey(0)
+    cv2.waitKey()
+    cv2.destroyAllWindows()
 

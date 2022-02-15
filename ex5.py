@@ -21,6 +21,7 @@ def realiza_diferencas(bgr):
         Forneça como saída uma uma cópia da imagem  em que cada pixel  recebe o módulo da subtração entre o pixel que vem depois e o que vem antes dele (na horizontal).
         
         Note que nas primeira coluna não existe pixel anterior, e na última coluna não existe posterior.
+        Nota também que uma variável uint8 não admite valores '< 0' nem '> 255', então considere fazer conversões de tipos de dados 
     """
     res = bgr.copy()
     return res
@@ -41,5 +42,6 @@ if __name__ == "__main__":
     cv2.imshow('saida', saida)
     cv2.moveWindow('saida',800,200)
 
-    cv2.waitKey(0)
+    cv2.waitKey()
+    cv2.destroyAllWindows()
 
